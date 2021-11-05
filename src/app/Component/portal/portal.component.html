@@ -34,7 +34,7 @@
                       </div>
                 </div>
         </div>
-        <div class="card m-5">
+        <div class="card mb-1">
           <h4 class="card-header" [ngClass]="plan">Plan Information</h4>
               <div class="card-body bg-gradient-light">
                   <ul class="list-group list-group-flush">
@@ -53,27 +53,33 @@
                   </ul>
               </div>
       </div>
-      <div class="card m-5">
-        <h4 class="card-header">Devices</h4>
-        <div class="content">
-          <div fxLayout="row wrap" fxLayoutGap="4px grid">
-        <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let device of devices">
-          <mat-card class="mat-elevation-z4 border rounded-top border-primary">
-              <mat-card-header>
-                  <mat-card-title class="h3">Device: {{device.deviceName}}</mat-card-title>
-              </mat-card-header>
-               <img mat-card-image src="/assets/signUp.jpg" class="card-img-top" alt="plan1"/>
-              <mat-card-content>
-                  <p class="card-text">{{device.deviceId}}</p>
-              </mat-card-content>
-              <ul class="list-group list-group-flush">
-                  <li class="list-group-item">Camera: {{device.camera}}</li>
-                  <li class="list-group-item">Storage: {{device.storage}}</li>
-                  <li class="list-group-item">Device Display: {{device.deviceDis}}</li>
-              </ul>
-              
-          </mat-card>
-    </div>
-    </div>
-</div>
+</div>     
+<div class="pos">  
+  <h4 class="card-header">Devices</h4>
+<table class="table">
+      <title class="card-header">
+        hello
+      </title>
+      <thead class="card-header">
+        <tr>
+          <th>Device Id</th>
+          <th>Device Name</th>
+          <th>Camera</th>
+          <th>Storage</th>
+          <th>Display</th>
+          <th>Phone Number</th>
+        </tr>
+      </thead>
+      <tbody class="card-body" *ngFor="let device of devices">
+        <tr>
+          <th>{{device.deviceId}}</th>
+          <th>{{device.deviceName}}</th>
+          <th style="width: 25%;">{{device.camera}}</th>
+          <th>{{device.storage}}</th>
+          <th style="width: 50%;">{{device.deviceDis}}</th>
+          <th></th>
+        </tr>
+      </tbody>
+    </table>
+</div> 
 

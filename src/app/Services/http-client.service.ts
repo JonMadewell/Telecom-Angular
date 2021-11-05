@@ -39,7 +39,7 @@ export class HttpClientService {
     return this.httpClient.get<Device[]>("https://telecomprojectapijmrt.azurewebsites.net/api/Devices");
   }
 
-  getPhone(deviceId: number){
+  getnum(deviceId: number){
     return this.httpClient.get<Device>("https://telecomprojectapijmrt.azurewebsites.net/api/Devices");
   }
 }

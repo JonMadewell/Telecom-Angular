@@ -55,3 +55,12 @@ hr{
     width: 200px;
     height: 200px;
 }
+
+table{
+    background-color: white;
+    
+}
+
+.pos{
+    margin-right: 25%;
+}
