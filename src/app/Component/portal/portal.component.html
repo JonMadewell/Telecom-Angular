@@ -16,7 +16,6 @@
                         <button type="button" class="btn btn-primary">View Your Plans</button>
                         <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
                           <button class="btn btn-primary dropdown-toggle-split" ngbDropdownToggle></button>
-                          <div></div>
                           <div class="dropdown-menu" (click)="selectChangeHandler($event)" ngbDropdownMenu >
                             <button ngbDropdownItem *ngFor="let plan of plans; let i = index" value="{{i}}">Plan Id: {{plan.planId}}- {{plan.planName}}</button>
                           </div>
@@ -26,7 +25,6 @@
                         <button type="button" class="btn btn-primary">Add New Plan</button>
                         <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
                           <button class="btn btn-primary dropdown-toggle-split" ngbDropdownToggle></button>
-                          <div></div>
                           <div class="dropdown-menu" (click)="selectChangeHandler($event)" ngbDropdownMenu>
                             <button ngbDropdownItem *ngFor="let plans of allPlans; let i = index"  value="{{i}}">Plan Id: {{plans.planId}}- {{plans.planName}}</button>
                           </div>
@@ -34,7 +32,7 @@
                       </div>
                 </div>
         </div>
-        <div class="card mb-1">
+        <div class="card m-3">
           <h4 class="card-header" [ngClass]="plan">Plan Information</h4>
               <div class="card-body bg-gradient-light">
                   <ul class="list-group list-group-flush">
@@ -72,12 +70,20 @@
       </thead>
       <tbody class="card-body" *ngFor="let device of devices">
         <tr>
-          <th>{{device.deviceId}}</th>
-          <th>{{device.deviceName}}</th>
-          <th style="width: 25%;">{{device.camera}}</th>
-          <th>{{device.storage}}</th>
-          <th style="width: 50%;">{{device.deviceDis}}</th>
-          <th></th>
+          <td>{{device.deviceId}}</td>
+          <td>{{device.deviceName}}</td>
+          <td>{{device.camera}}</td>
+          <td>{{device.storage}}</td>
+          <td>{{device.deviceDis}}</td>
+          <td><div class="btn-group mr-3">
+            <button type="button" class="btn btn-primary">Select Number</button>
+            <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
+              <button class="btn btn-primary dropdown-toggle-split" ngbDropdownToggle></button>
+              <div class="dropdown-menu" (click)="selectChangeHandler($event)" ngbDropdownMenu>
+                <button ngbDropdownItem *ngFor="let number of numbers; let i = index"  value="{{i}}">Plan Id: {{number[i]}</button>
+              </div>
+            </div>
+          </div></td>
         </tr>
       </tbody>
     </table>
